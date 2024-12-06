@@ -2,10 +2,13 @@ package com.social.media.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.catalina.User;
 
-@Data
 @Entity
+@Getter
+@Setter
 public class Post {
 
 
