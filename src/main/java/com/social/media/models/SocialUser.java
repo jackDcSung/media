@@ -29,7 +29,7 @@ public class SocialUser {
 
 
 
-    @OneToMany(mappedBy = "socialUser")
+    @OneToMany(mappedBy = "socialUser",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private List<Post> posts=new ArrayList<>();
 
 
