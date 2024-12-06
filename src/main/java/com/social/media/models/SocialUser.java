@@ -34,15 +34,12 @@ public class SocialUser {
 
 
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_group",
             joinColumns =@JoinColumn(name="user_id"),
             inverseJoinColumns  =@JoinColumn(name="group_id")
     )
-
-
-
     private Set<SocialGroup> groups=new HashSet<>();
 
 
