@@ -2,13 +2,12 @@ package com.social.media.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SocialProfile {
 
 
@@ -23,6 +22,7 @@ public class SocialProfile {
     @JsonIgnore
     private  SocialUser user;
 
+    private  String description;
 
 
 
@@ -30,8 +30,11 @@ public class SocialProfile {
 
 
 
-
-
+    public void setSocialUser(SocialUser socialUser){
+        this.user = socialUser;
+        if (user.getSocialProfile() != this)
+            user.setSocialProfile(this);
+    }
 
 
 

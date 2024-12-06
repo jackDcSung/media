@@ -1,6 +1,5 @@
 package com.social.media.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,8 +10,7 @@ import java.util.Set;
 
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class SocialUser {
@@ -24,7 +22,7 @@ public class SocialUser {
 
 
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private SocialProfile socialProfile;
 
 
@@ -48,7 +46,10 @@ public class SocialUser {
     private Set<SocialGroup> groups=new HashSet<>();
 
 
-
+    public void setSocialProfile(SocialProfile socialProfile){
+        socialProfile.setUser(this);
+        this.socialProfile = socialProfile;
+    }
 
 
 

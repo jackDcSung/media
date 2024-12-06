@@ -1,4 +1,5 @@
-package com.social.media.controllers;
+package com.social.media;
+
 
 import com.social.media.models.Post;
 import com.social.media.models.SocialGroup;
@@ -91,7 +92,6 @@ public class DataInitializer {
             profile1.setUser(user1);
             profile2.setUser(user2);
             profile3.setUser(user3);
-
 
             // Save profiles to the database (assuming you have a SocialProfileRepository)
             socialProfileRepository.save(profile1);
