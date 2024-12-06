@@ -22,7 +22,7 @@ public class SocialUser {
 
 
 
-    @OneToOne(mappedBy = "user",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    @OneToOne(mappedBy = "user",cascade = {CascadeType.REMOVE,CascadeType.PERSIST,CascadeType.MERGE})
     private SocialProfile socialProfile;
 
 
