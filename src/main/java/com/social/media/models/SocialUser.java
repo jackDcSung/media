@@ -1,5 +1,6 @@
 package com.social.media.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -41,6 +42,9 @@ public class SocialUser {
             joinColumns =@JoinColumn(name="user_id"),
             inverseJoinColumns  =@JoinColumn(name="group_id")
     )
+
+
+
     private Set<SocialGroup> groups=new HashSet<>();
 
 

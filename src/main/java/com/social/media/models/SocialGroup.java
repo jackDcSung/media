@@ -1,6 +1,7 @@
 package com.social.media.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class SocialGroup {
 
 
     @ManyToMany(mappedBy ="groups")
+    @JsonIgnore
     private Set<SocialUser> socialUsers=new HashSet<>();
 
 
