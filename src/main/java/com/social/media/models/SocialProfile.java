@@ -1,8 +1,10 @@
 package com.social.media.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 public class SocialProfile {
 
 
